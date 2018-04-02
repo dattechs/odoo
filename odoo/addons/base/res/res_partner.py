@@ -27,7 +27,6 @@ WARNING_MESSAGE = [
                    ]
 WARNING_HELP = _('Selecting the "Warning" option will notify user with the message, Selecting "Blocking Message" will throw an exception with the message and block the flow. The Message has to be written in the next field.')
 
-
 ADDRESS_FIELDS = ('street', 'street2', 'zip', 'city', 'state_id', 'country_id')
 @api.model
 def _lang_get(self):
@@ -37,7 +36,6 @@ def _lang_get(self):
 def _tz_get(self):
     # put POSIX 'Etc/*' entries at the end to avoid confusing users - see bug 1086728
     return [(tz, tz) for tz in sorted(pytz.all_timezones, key=lambda tz: tz if not tz.startswith('Etc/') else '_')]
-
 
 class FormatAddressMixin(models.AbstractModel):
     _name = "format.address.mixin"
@@ -50,8 +48,7 @@ class FormatAddressMixin(models.AbstractModel):
             doc = etree.fromstring(arch)
             for address_node in doc.xpath("//div[hasclass('o_address_format')]"):
                 Partner = self.env['res.partner'].with_context(no_address_format=True)
-                sub_view = Partner.fields_view_get(
-                    view_id=address_view_id.id, view_type='form', toolbar=False, submenu=False)
+                sub_view = Partner.fields_view_get(view_id=address_view_id.id, view_type='form', toolbar=False, submenu=False)
                 sub_view_node = etree.fromstring(sub_view['arch'])
                 #if the model is different than res.partner, there are chances that the view won't work
                 #(e.g fields not present on the model). In that case we just return arch
@@ -116,14 +113,12 @@ class PartnerCategory(models.Model):
             args = [('name', operator, name)] + args
         return self.search(args, limit=limit).name_get()
 
-
 class PartnerTitle(models.Model):
     _name = 'res.partner.title'
     _order = 'name'
 
     name = fields.Char(string='Title', required=True, translate=True)
     shortcut = fields.Char(string='Abbreviation', translate=True)
-
 
 class Partner(models.Model):
     _description = 'Contact'
@@ -163,13 +158,11 @@ class Partner(models.Model):
     website = fields.Char(help="Website of Partner or Company")
     comment = fields.Text(string='Notes')
 
-    category_id = fields.Many2many('res.partner.category', column1='partner_id',
-                                    column2='category_id', string='Tags', default=_default_category)
+    category_id = fields.Many2many('res.partner.category', column1='partner_id', column2='category_id', string='Tags', default=_default_category)
     credit_limit = fields.Float(string='Credit Limit')
     barcode = fields.Char(oldname='ean13')
     active = fields.Boolean(default=True)
-    customer = fields.Boolean(string='Is a Customer', default=True,
-                               help="Check this box if this contact is a customer.")
+    customer = fields.Boolean(string='Is a Customer', default=True, help="Check this box if this contact is a customer.")
     supplier = fields.Boolean(string='Is a Vendor',
                                help="Check this box if this contact is a vendor. "
                                "If it's not checked, purchase people will not see it when encoding a purchase order.")
