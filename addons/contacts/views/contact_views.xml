@@ -57,27 +57,35 @@
     <menuitem id="menu_partner_category_form"
         action="base.action_partner_category_form"
         name="Contact Tags"
-        sequence="1" parent="res_partner_menu_config"/>
+        sequence="1"
+        parent="res_partner_menu_config"/>
 
     <menuitem id="menu_partner_title_contact"
         action="base.action_partner_title_contact"
-        name="Contact Titles" parent="res_partner_menu_config"
+        name="Contact Titles"
+        parent="res_partner_menu_config"
         sequence="3"/>
 
-    <menuitem id="res_partner_industry_menu" name="Sectors of Activity"
-        action="base.res_partner_industry_action" parent="res_partner_menu_config"
+    <menuitem id="res_partner_industry_menu"
+        name="Sectors of Activity"
+        action="base.res_partner_industry_action"
+        parent="res_partner_menu_config"
         sequence="4"/>
 
-    <menuitem id="menu_localisation" name="Localization"
-        parent="res_partner_menu_config" sequence="5"/>
+    <menuitem id="menu_localisation"
+        name="Localization"
+        parent="res_partner_menu_config"
+        sequence="5"/>
 
     <menuitem id="menu_country_partner"
-        action="base.action_country" parent="menu_localisation"
+        action="base.action_country"
+        parent="menu_localisation"
         sequence="1"/>
 
     <menuitem id="menu_country_group"
         action="base.action_country_group"
-        name="Country Group" parent="menu_localisation"
+        name="Country Group"
+        parent="menu_localisation"
         sequence="3"/>
 
     <menuitem id="menu_country_state_partner"
