@@ -23,8 +23,8 @@
     'name' : 'Biblioteca',
     'version' : '1.0',
     'author' : 'prueba',
-    'summary' : 'Modulo de odoo para demo',
-    'description' : 'modulo varios demo',
+    'summary' : 'prueba Modulo de odoo para demo',
+    'description' : 'prueba demo',
     'depends' : [
             'base',
             ],
