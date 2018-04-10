@@ -1,6 +1,4 @@
-  GNU nano 2.5.3                                               File: __opendattechs__.py                                                                                                      
-
-# -*- coding: utf-8 -*-
+-*- coding: utf-8 -*-
 ##############################################################################
 #
 #    OpenERP, Open Source Management Solution
@@ -20,12 +18,11 @@
 #    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #
 ##############################################################################
- 
- 
+
 {
     'name' : 'Biblioteca',
     'version' : '1.0',
-    'author' : 'mica',
+    'author' : 'prueba',
     'summary' : 'Modulo de odoo para demo',
     'description' : 'modulo varios demo',
     'depends' : [
