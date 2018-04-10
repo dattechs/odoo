@@ -1,5 +1,3 @@
-  GNU nano 2.5.3                                                 File: biblioteca.py                                                                                                          
-
 # -*- encoding: utf-8 -*-
 ##############################################################################
 #
@@ -21,8 +19,7 @@
 #
 ##############################################################################
 
-
-from opendattechs import models, fields, api, _
+from openerp import models, fields, api, _
 
 class biblioteca_libro(models.Model):
     _name = 'biblioteca.libro'
